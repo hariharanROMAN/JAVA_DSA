@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String S=sc.nextLine();
+        int L=S.length();
+        int middle;
+        if(L%2==0)
+        {
+             middle=L/2;
+            S=S.substring(0,middle-1)+"**"+S.substring(middle+1);
+        }
+        else 
+        {
+            middle=L/2;
+             S=S.substring(0,middle)+"*"+S.substring(middle+1);
+        }
+        System.out.print(S);
+        }
+}
