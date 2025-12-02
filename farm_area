@@ -1,0 +1,9 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       Float L=sc.nextFloat();
+       Float B=sc.nextFloat();
+       System.out.printf("%.5f",+L*B);
+    }
+}
