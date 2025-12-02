@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        sc.close();
+
+        int n = s.length();
+        int count = 0;
+
+        System.out.println("Palindromic substrings:");
+
+        // Check every possible substring
+        for (int start = 0; start < n; start++) {
+            for (int end = start; end < n; end++) {
+                
+                String sub = s.substring(start, end + 1);
+
+                // Check if substring is palindrome
+                if (isPalindrome(sub)) {
+                    count++;
+                    System.out.println("Position: [" + start + "," + end + "]  ->  " + sub);
+                }
+            }
+        }
+
+        System.out.println("\nTotal Palindromic Substrings = " + count);
+    }
+
+    // Function to check if a string is palindrome
+    public static boolean isPalindrome(String str) {
+        int i = 0, j = str.length() - 1;
+
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
